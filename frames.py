@@ -1,4 +1,4 @@
-progress = [
+progress: list = [
     "[ 5% ]: =>",
     "[ 10% ]: ==>",
     "[ 15% ]: ===>",
@@ -22,7 +22,7 @@ progress = [
 ]
 
 
-donut = [
+donut: list = [
     '''
                                       ▓▓▓▓▓
                                ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
@@ -283,7 +283,7 @@ donut = [
     ''',
 ]
 
-frames_map = {
+frames_map: dict[str, list[str]] = {
     "donut": donut,
     "progress": progress
 }

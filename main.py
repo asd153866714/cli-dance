@@ -7,7 +7,7 @@ from frames import frames_map
 
 
 # read command-line argument
-def handle_cli_arguments():
+def handle_cli_arguments() -> None:
     parser = argparse.ArgumentParser(
         description="Simple program with command-line arguments"
     )
@@ -47,13 +47,13 @@ def handle_cli_arguments():
 
 
 ## show the lsit of frames
-def show_frames():
+def show_frames() -> None:
     for key in frames_map.keys():
         print(key)
 
 
 ## display frames
-def display_frames(frames, dealy):
+def display_frames(frames: list[str], dealy: float) -> None:
     while True:
         for i in range(len(frames)):
             # Print the frame
