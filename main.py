@@ -19,6 +19,16 @@ def handle_cli_arguments():
         action="store_true",
         help="Show the list of frames",
     )
+
+    parser.add_argument(
+        "-d",
+        "--delay",
+        metavar="DELAY",
+        default=0.3,
+        type=float,
+        help="Set the frame delay time in seconds",
+    )
+
     parser.add_argument(
         "-f",
         "--frames",
@@ -27,12 +37,13 @@ def handle_cli_arguments():
         type=str,
         help="Display frames",
     )
+
     args = parser.parse_args()
 
     if args.list:
         show_frames()
     elif args.frames:
-        display_frames(frames_map[args.frames])
+        display_frames(frames_map[args.frames], args.delay)
 
 
 ## show the lsit of frames
@@ -42,12 +53,12 @@ def show_frames():
 
 
 ## display frames
-def display_frames(frames):
+def display_frames(frames, dealy):
     while True:
         for i in range(len(frames)):
             # Print the frame
             print("{}".format(frames[i]))
-            time.sleep(0.3)
+            time.sleep(dealy)
             os.system("clear")
 
 
